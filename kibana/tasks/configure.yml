@@ -1,0 +1,8 @@
+---
+- name: Configure Kibana
+  become: true
+  template:
+    src: kibana.yml.j2
+    mode: 0644
+    dest: /etc/kibana/kibana.yml
+  notify: start kibana

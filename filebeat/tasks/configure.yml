@@ -1,0 +1,8 @@
+---
+- name: Configure Filebeat
+  become: true
+  template:
+    src: filebeat.yml.j2
+    mode: 0644
+    dest: /etc/filebeat/filebeat.yml
+  notify: start filebeat

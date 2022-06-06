@@ -1,0 +1,4 @@
+server.host: "0.0.0.0"
+# The URLs of the Elasticsearch instances to use for all your queries.
+elasticsearch.hosts: ["http://{{ hostvars['el-instance']['ansible_facts']['default_ipv4']['address'] }}:9200"]
+kibana.index: ".kibana"

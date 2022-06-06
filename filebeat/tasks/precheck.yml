@@ -1,0 +1,6 @@
+---
+- name: Fail if unsupported system detected
+  fail:
+    msg: "System {{ ansible_distribution }} is not support by this role"
+  when: ansible_distribution not in supported_systems
+  

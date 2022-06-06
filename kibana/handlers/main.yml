@@ -1,0 +1,8 @@
+---
+# handlers file for kibana-role
+- name: start kibana
+  become: true
+  service:
+    name: kibana
+    state: started
+    enabled: true

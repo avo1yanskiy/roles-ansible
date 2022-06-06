@@ -1,0 +1,14 @@
+---
+- name: "Download Filebeat's deb"
+  get_url:
+    url: "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{{ filebeat_version }}-amd64.deb"
+    dest: "files/filebeat-{{ filebeat_version }}-amd64.deb"
+  delegate_to: localhost
+  register: download_filebeat
+  until: download_filebeat is succeeded
+  when: filebeat_install_type == 'remote'
+- name: Copy Filebeat to manage host
+  copy:
+    src: "files/filebeat-{{ filebeat_version }}-amd64.deb"
+    mode: 0644
+    dest: "/tmp/filebeat-{{ filebeat_version }}-amd64.deb"

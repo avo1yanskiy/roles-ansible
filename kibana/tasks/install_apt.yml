@@ -1,0 +1,6 @@
+---
+- name: Install Kibana
+  become: true
+  apt:
+    deb: "/tmp/kibana-{{ kibana_version }}-amd64.deb"
+    state: present

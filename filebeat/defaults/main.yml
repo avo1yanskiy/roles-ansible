@@ -1,0 +1,4 @@
+---
+# defaults file for kibana-role
+filebeat_version: "7.14.1"
+filebeat_install_type: remote

@@ -1,0 +1,6 @@
+---
+- name: Install Filebeat
+  become: true
+  yum:
+    name: "/tmp/filebeat-{{ filebeat_version }}-x86_64.rpm"
+    state: present
